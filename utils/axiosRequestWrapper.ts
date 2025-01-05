@@ -18,16 +18,15 @@ import { HttpClientError } from 'error-manager-helper'
 
 import axios,
 { 
-    type AxiosRequestConfig, type Method, type AxiosError
+    type AxiosRequestConfig, type Method, type AxiosError,
+    type RawAxiosRequestHeaders
 } from 'axios'
 
 interface RequestParams {
     url: string;
     method: Method
     payload?: any
-    headers?: {
-          [key: string]: string
-    }
+    headers?: RawAxiosRequestHeaders
     timeout?: number
     errorMessage?: string
 }
