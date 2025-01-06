@@ -25,7 +25,7 @@
 
 'use client'
 
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext } from 'react'
 
 /**
  * 📋 Loading Context Type Definition
@@ -45,7 +45,7 @@ interface LoadingContextType {
  * @description React context for managing global loading state
  * @type {React.Context<LoadingContextType | undefined>}
  */
-export const LoadingContext = createContext<LoadingContextType | undefined>(undefined);
+export const LoadingContext = createContext<LoadingContextType | undefined>(undefined)
 
 /**
  * 🎣 useLoading Hook
@@ -62,11 +62,11 @@ export const LoadingContext = createContext<LoadingContextType | undefined>(unde
  * @returns {LoadingContextType} Loading context value and setter
  */
 export function useLoading() {
-    const context = useContext(LoadingContext);
+    const context = useContext(LoadingContext)
     if (context === undefined) {
-        throw new Error('useLoading must be used within a LoadingProvider');
+        throw new Error('useLoading must be used within a LoadingProvider')
     }
-    return context;
+    return context
 }
 
 /**
@@ -87,21 +87,21 @@ export function useLoading() {
  */
 export function LoadingProvider({ children }: { children: React.ReactNode }) {
     // 🔄 Initialize loading state
-    const [loading, setLoading] = React.useState(false);
+    const [loading, setLoading] = React.useState(false)
 
     // 📦 Create context value object
     const value = React.useMemo(
         () => ({
             loading,
-            setLoading,
+            setLoading
         }),
         [loading]
-    );
+    )
 
     return (
         // 🌍 Provide loading context to children
         <LoadingContext.Provider value={value}>
             {children}
         </LoadingContext.Provider>
-    );
+    )
 }
