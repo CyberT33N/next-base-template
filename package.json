@@ -17,7 +17,8 @@
           "test:watch": "vitest --watch",
           "test:integration": "vitest run --testTimeout=300000 --coverage --disable-console-intercept --watch=false --config vitest.integration.config.ts",
           "test:unit": "vitest run --testTimeout=300000 --coverage --disable-console-intercept --watch=false --config vitest.unit.config.ts",
-          "test:production": "vitest run --testTimeout=300000 --coverage --disable-console-intercept --watch=false --config vitest.production.config.ts"
+          "test:production": "vitest run --testTimeout=300000 --coverage --disable-console-intercept --watch=false --config vitest.production.config.ts",
+          "gif": "tsx utils/gif-creator.ts"
      },
      "dependencies": {
           "@nextui-org/button": "2.0.31",
@@ -79,6 +80,7 @@
           "sinon": "18.0.0",
           "ts-node": "10.9.2",
           "tsconfig-paths": "^4.2.0",
+          "tsx": "^4.19.2",
           "vite-tsconfig-paths": "4.3.2",
           "vitest": "1.6.0"
      }
